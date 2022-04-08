@@ -1,28 +1,26 @@
 import { useEffect, useState } from "react";
-import { getData, getProducts } from "../../Services/api";
+import { getData, getProducts } from "../../services/api";
 import CardItem from "./CardItem";
-import "./card.css"
+import "./cards.css";
 
 const Cards = () => {
   const [result, setResult] = useState([]);
 
   useEffect(() => {
-    getProducts().then((param) => {
-      setResult(param);
-    });
+     getProducts().then((param) => {
+        setResult(param);
+      });
   }, []);
 
   return (
     <div className="ui stackable three column grid productItems">
-      
       {result.map((item) => {
-        // console.log(item.img);
         return (
           <CardItem
             item={item}
             key={item.id}
             description={item?.description.comment || ""}
-            img={item.img}
+            image={item.image}
             name={item.name}
             price={item.price}
           />

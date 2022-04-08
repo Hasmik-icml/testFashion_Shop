@@ -1,14 +1,18 @@
 import Cards from "../card/Cards";
-import Slide from "../Slide/Slide"
-import slidesData from "../../Services/slideData";
-import "../home/home.css"
+import "../home/home.css";
+import Slides from "../slider/Slides";
+import { useAuth0 } from "@auth0/auth0-react";
 
-function Home(){
+
+const Home = () => {
+    const {user, isAuthenticated} = useAuth0();
+
     return (
-       <div className="home main ui container">
-            <Slide slides={slidesData()}/>
-            <Cards />
-       </div>
-    )
+        <div className="home main">
+            <Slides />
+           <Cards />
+        </div>
+    );
 }
+
 export default Home;

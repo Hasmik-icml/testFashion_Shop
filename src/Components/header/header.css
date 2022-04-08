@@ -1,11 +1,8 @@
 .ui.fixed.menu.top{
-    background-color: #8a7476;
+    background-color: rgb(64, 125, 238);
 }
 
 .customHeader, .pusher{
     height: 60px;
     
-}
-.logoIcon{
-    cursor: pointer;
 }

@@ -1,29 +1,26 @@
-import React from 'react'
-import { Tab } from 'semantic-ui-react'
-import DataTable from '../dataTable/DataTable'
-import PendingTable from '../dataTable/PandingTable';
+import React from "react";
+import { Tab } from "semantic-ui-react";
+import DataTable from "../dataTable/DataTable";
+import PendingTable from "../dataTable/PendingTable";
 
-function Tabs({pendingProducts, allProducts, changeStatus}){
-    console.log(pendingProducts);
+
+const Tabs = ({pendingProducts, allProducts, changeStatus}) => {
+   console.log(pendingProducts);
   const panes = [
     {
       menuItem: "All Products",
       render: () => <Tab.Pane>
-          <DataTable list = {allProducts}/>
+          {/* <DataTable list = {allProducts}/> */}
           </Tab.Pane>
     
     },
-    { 
-        menuItem: "Pending", render: () => {
-            <Tab.Pane>
-            <PendingTable list = {pendingProducts} changeStatus = {changeStatus} />
-            </Tab.Pane> 
-        }
-     
-    },
+    { menuItem: "Pending", render: () => <Tab.Pane>
+        <PendingTable list = {pendingProducts} changeStatus = {changeStatus} />
+        </Tab.Pane> },
   ];
   return (
     <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes} />
   );
 };
+
 export default Tabs;

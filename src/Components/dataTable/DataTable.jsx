@@ -1,8 +1,10 @@
-import { List, Button, Image } from "semantic-ui-react";
-import logo from "../../logo.jpg";
+import { Table, Icon } from "semantic-ui-react";
+import productImg from "../../img/img1.jpg";
+import { List, Image, Button } from "semantic-ui-react";
 import "./dataTable.css";
 
 function DataTable({ list }) {
+    
   console.log(list);
   return (
     <List divided verticalAlign="middle">
@@ -15,11 +17,11 @@ function DataTable({ list }) {
             <Image
               avatar
               className="product-icon"
-              src={item.product.img[0]?.imagePath || logo}
+              src={item.product.img[0]?.imagePath || productImg}
             />
              <List.Content>  
              <List horizontal>
-
+             
             <List.Content > {item.orderStatus} 
             </List.Content>
                 </List>
