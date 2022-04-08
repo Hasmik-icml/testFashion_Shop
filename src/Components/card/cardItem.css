@@ -1,0 +1,18 @@
+/* .ui.card>.image>img,
+.ui.cards>.card>.image>img {
+    width: 100px;
+    background:none;
+} */
+.ui.button.buyBtn{
+    position: relative;
+    border: none;
+    background: #fbe8ea;
+    border-radius: 15px;
+    color: chocolate;
+    margin-left: 25px; 
+}
+.ui.button.buyBtn:hover{
+    background: #d3c0ba; 
+    color: #fbe8ea;
+    cursor: pointer;
+}
